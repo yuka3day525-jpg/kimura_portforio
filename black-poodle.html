@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Black Poodle｜黒プードルをテーマにしたWebサイト。写真投稿、クイズ、犬のニュース配信などの実装を紹介します。">
+  <title>Black Poodle | Works Detail</title>
+  <link rel="stylesheet" href="works.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="container">
+      <a class="brand" href="index.html">PORTFOLIO</a>
+      <a class="back-link" href="index.html#point3">← Works一覧に戻る</a>
+    </div>
+  </header>
+
+  <section class="hero" aria-labelledby="page-title">
+    <div class="container">
+      <p class="eyebrow">TRAINING PROJECT / 04</p>
+      <h1 id="page-title">Black Poodle</h1>
+      <p class="hero-sub">黒プードルをテーマにした参加型Webサイト</p>
+      <p class="hero-desc">黒プードルの魅力を紹介するサイトを、PHP・MySQLを使って機能を拡張し、写真投稿ギャラリー、クイズ、犬のニュース表示など、閲覧者が楽しめる仕組みを実装しました。</p>
+      <ul class="tag-list" aria-label="使用技術">
+        <li>HTML / CSS</li>
+        <li>PHP</li>
+        <li>MySQL</li>
+        <li>JavaScript</li>
+        <li>jQuery</li>
+        <li>RSS</li>
+      </ul>
+      <div class="actions">
+        <a class="btn btn-light" href="http://kimura.atwebpages.com/poodle/index.html" target="_blank" rel="noopener noreferrer">デモサイトを見る ↗</a>
+        <!-- TODO: 公開用のGitHubリポジトリURLに差し替える -->
+        <a class="btn btn-outline" href="https://github.com/yuka3day525-jpg/poodle.git">GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <nav class="page-nav" aria-label="ページ内メニュー">
+    <div class="container">
+      <a href="#overview">概要</a>
+      <a href="#feature-details">機能の詳細</a>
+      <a href="#development">開発の工夫</a>
+      <a href="#ai">生成AI活用</a>
+      <a href="#future">今後の改善</a>
+    </div>
+  </nav>
+
+  <main class="container">
+    <section class="detail" id="overview">
+      <div class="section-head">
+        <p class="section-no">01 / OVERVIEW</p>
+        <h2>制作背景・作品概要</h2>
+      </div>
+      <div class="summary">
+        <p>黒プードルをテーマに、様々な機能を楽しめるWebサイトを制作しました。当初の紹介ページに加え、PHP・MySQLの学習内容を活用し、訪問者が参加できる機能を追加しました。</p>
+        <p>掲示板機能、回答を保持できるクイズ、RSSによるニュース表示を実装し、静的な紹介サイトから、データの登録・取得・表示ができるサイトへ発展させました。</p>
+        <dl class="meta">
+          <div><dt>制作区分</dt><dd>自主制作</dd></div>
+          <div><dt>開発言語・データベース</dt><dd>HTML / CSS / PHP / MySQL</dd></div>
+          <div><dt>使用技術</dt><dd>jQuery / SESSION / Cookie / RSS</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="detail" id="feature-details">
+      <div class="section-head">
+        <p class="section-no">02 / FEATURE DETAILS</p>
+        <h2>機能の詳細</h2>
+        <p class="section-lead">写真投稿・クイズ・ニュース配信などを、実際の画面とあわせて紹介します。</p>
+      </div>
+
+      <article class="detail-feature">
+        <figure class="feature-picture">
+          <img src="image/bp-home.jpg" alt="Black Poodleのトップページ" >
+          
+          <figcaption>黒プードルを紹介するトップページ</figcaption>
+        </figure>
+        <div class="feature-copy">
+          <p class="small-number">FEATURE 01</p>
+          <h3>ナビゲーションとページ紹介を意識したデザイン</h3>
+          <p>
+              黒プードルをテーマに、写真や配色、余白の使い方を意識しながら、
+              サイト全体の見た目に統一感を持たせました。
+              上部にはナビゲーションメニューを設け、
+              各ページへ移動しやすい構成にしています。
+          </p>
+          <p>
+              また、トップページには各コンテンツの紹介を縦に配置し、
+              サイトをスクロールしながら
+              「どんなページがあるか」を自然に把握できるようにしました。
+              写真や見出しを使い、視覚的にも楽しめる構成を意識しています。
+          </p>
+
+          <ul>
+              <li>各ページへ移動できるナビゲーションメニュー</li>
+              <li>トップページに各コンテンツの紹介を配置</li>
+              <li>写真・配色・余白を意識したデザイン</li>
+              <li>サイト全体で統一感のあるレイアウト</li>
+              <li>スマートフォンにも対応したレスポンシブデザイン</li>
+          </ul>
+      </div>
+      </article>
+
+      <article class="detail-feature">
+          <figure class="feature-picture">
+              <img
+                  src="image/bp-post.jpg"
+                  alt="犬の写真を投稿するフォームと確認画面"
+                  
+              >
+              
+              <figcaption>写真投稿・入力確認</figcaption>
+          </figure>
+
+          <div class="feature-copy">
+              <p class="small-number">FEATURE 02</p>
+
+              <h3>写真投稿・確認画面・画像の一時保存</h3>
+
+              <p>
+                  自慢の「うちの子」を紹介できる写真投稿機能です。
+                  写真と入力内容を受け取り、確認画面で投稿内容を確認した後、
+                  確定したデータをMySQLへ登録します。
+              </p>
+
+              <p>
+                  確認画面へ移動する際は、入力情報をSESSIONで保持し、
+                  アップロードされた画像は一時的に保存しています。
+                  投稿を確定した段階で本登録することで、
+                  確認・修正を行ってから投稿できる流れにしました。
+              </p>
+
+              <ul>
+                  <li>写真付き投稿フォーム</li>
+                  <li>入力内容の確認画面とバリデーション</li>
+                  <li>SESSIONによる入力情報の保持</li>
+                  <li>確認中の画像ファイルの一時保存</li>
+                  <li>投稿確定後の画像・データ登録</li>
+                  <li>MySQLへの投稿情報保存</li>
+              </ul>
+          </div>
+      </article>
+
+      <article class="detail-feature">
+          <figure class="feature-picture">
+              <img
+                  src="image/bp-gallery.jpg"
+                  alt="投稿された犬の写真を表示するギャラリー画面"
+                  
+              >
+              
+              <figcaption>投稿写真の一覧表示</figcaption>
+          </figure>
+
+          <div class="feature-copy">
+              <p class="small-number">FEATURE 03</p>
+
+              <h3>投稿ギャラリー・日付別表示・投稿回数の制限</h3>
+
+              <p>
+                  投稿された写真や情報をMySQLから取得し、
+                  ギャラリー形式で一覧表示します。
+                  また、投稿された日付ごとにボタンを用意し、
+                  見たい日付を選んで投稿内容を切り替えて確認できるようにしました。
+              </p>
+
+              <p>
+                  さらにCookieを利用して、
+                  同じブラウザからの投稿を1日1回に制限しています。
+                  すでに投稿済みの場合は、その旨を画面上に表示する仕組みです。
+              </p>
+
+              <ul>
+                  <li>MySQLからの投稿データ取得・表示</li>
+                  <li>日付ごとのボタンによる投稿一覧の切り替え</li>
+                  <li>日付別の投稿内容表示</li>
+                  <li>Cookieを利用した1日1回の投稿制限</li>
+                  <li>投稿済みの場合の案内表示</li>
+              </ul>
+          </div>
+      </article>
+
+      <article class="detail-feature">
+          <figure class="feature-picture">
+              <img
+                  src="image/bp-quiz.jpg"
+                  alt="黒プードルに関するクイズ画面"
+                  
+              >
+            
+              <figcaption>クイズの回答・結果表示</figcaption>
+          </figure>
+
+          <div class="feature-copy">
+              <p class="small-number">FEATURE 04</p>
+
+              <h3>PHP・SESSIONを使ったクイズ機能</h3>
+
+              <p>
+                  黒プードルに関する問題に1問ずつ回答していくクイズ機能を実装しました。
+                  各問題の回答内容はSESSIONに保存し、
+                  ページを移動しても選択した回答が保持されるようにしています。
+              </p>
+
+              <p>
+                  前の問題に戻って回答を変更することもでき、
+                  すべての回答後には確認画面を表示してから結果画面へ進む構成です。
+                  単純に問題を表示するだけでなく、
+                  複数ページをまたいだ入力内容の保持や画面遷移を学ぶことを意識して制作しました。
+              </p>
+
+              <ul>
+                  <li>1問ずつ回答するクイズ形式</li>
+                  <li>SESSIONによる回答内容の保持</li>
+                  <li>前の問題に戻って回答を修正</li>
+                  <li>回答内容の確認画面</li>
+                  <li>回答結果の判定・表示</li>
+                  <li>複数ページ間での状態管理</li>
+              </ul>
+          </div>
+      </article>
+
+      <article class="detail-feature">
+        <figure class="feature-picture">
+            <img
+                src="image/bp-news.jpg"
+                alt="RSSを使った犬のニュース一覧画面"
+               
+            >
+           
+            <figcaption>RSSによる犬のニュース表示</figcaption>
+        </figure>
+
+        <div class="feature-copy">
+            <p class="small-number">FEATURE 05</p>
+
+            <h3>RSSを利用した外部ニュースの取得・表示</h3>
+
+            <p>
+                犬に関する最新情報をサイト内でも確認できるよう、
+                外部サイトのRSSを取得してニュース一覧を表示する機能を実装しました。
+                PHPでRSSデータを読み込み、
+                記事タイトルや公開情報など必要なデータを取り出して表示しています。
+            </p>
+
+            <p>
+                取得した記事は一覧形式で確認でき、
+                気になるニュースを選択すると元の記事へ移動できます。
+                自分で登録したデータだけでなく、
+                外部から取得した情報をWebサイト上に組み込む処理を学ぶために実装しました。
+            </p>
+
+            <ul>
+                <li>RSSから犬に関する記事情報を取得</li>
+                <li>取得したデータをPHPで処理</li>
+                <li>新着記事を一覧形式で表示</li>
+                <li>記事タイトルや公開情報の表示</li>
+                <li>元のニュース記事へのリンク</li>
+                <li>外部データをサイト内コンテンツとして活用</li>
+            </ul>
+        </div>
+    </article>
+    </section>
+
+    <section class="detail" id="development">
+      <div class="section-head">
+        <p class="section-no">03 / DEVELOPMENT</p>
+        <h2>開発で工夫したこと</h2>
+      </div>
+      <div class="two-col">
+        <article class="info-card">
+          <h3>入力確認からDB保存までの流れ</h3>
+          <p>フォームで受け取った情報をSESSIONで保持し、確認画面を通してから画像と投稿内容をMySQLに登録する構成にしました。</p>
+        </article>
+        <article class="info-card">
+          <h3>投稿回数を制御する仕組み</h3>
+          <p>Cookieを使って同一ブラウザからの投稿回数を制限し、投稿済みの場合には案内を表示できるようにしました。</p>
+        </article>
+        <article class="info-card">
+            <h3>投稿機能のセキュリティ対策</h3>
+            <p>
+                投稿フォームでは入力値の確認やエスケープ処理を行い、
+                不正な入力やXSSを防ぐことを意識して実装しました。
+                また、データベースへの登録にはPDOのプリペアドステートメントを使用し、
+                SQLインジェクション対策を行っています。
+            </p>
+        </article>
+        <article class="info-card">
+          <h3>外部RSSとの連携</h3>
+          <p>ニュースを手入力するのではなく、RSSから取得して表示することで、外部情報をサイト内に取り込む仕組みを学びました。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="detail" id="ai">
+              <div class="section-head">
+                <p class="section-no">04 / GENERATIVE AI</p>
+                <h2>生成AIの活用</h2>
+                <p class="section-lead">制作過程での生成AIの利用について紹介します。</p>
+              </div>
+              <div class="two-col">
+                <article class="info-card">
+                  <span class="ai-label">開発過程のAI活用</span>
+                  <h3>実装方法の検討・エラー調査の補助</h3>
+                  <p>生成AIを、実装方法の調査やエラー原因を整理するための補助として活用しました。提案内容は処理を確認し、実際に動作を試しながら修正しました。</p>
+                </article>
+                <article class="info-card">
+                  <span class="ai-label">確認と検証</span>
+                  <h3>コードと実行結果を照らし合わせる</h3>
+                  <p>提案された処理がそのまま正しく動くとは限らないため、セッションを確認しながら画面とデータベースの動きを確かめながら開発を進めました。</p>
+                </article>
+      </div>
+    </section>
+
+    <section class="detail" id="future">
+      <div class="section-head">
+        <p class="section-no">05 / NEXT STEPS</p>
+        <h2>今後の改善点</h2>
+      </div>
+      <div class="callout">
+        <p>写真投稿機能について、入力エラー時の案内や画像ファイルの検証などをより分かりやすくし、利用しやすい投稿画面に改善したいと考えています。</p>
+      </div>
+      <div class="actions">
+        <a class="btn" style="background:#fff;border-color:#c9d5ec;color:#243765" href="index.html#point3">← Works一覧へ戻る</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">© Portfolio — <a href="index.html#point3">Works一覧に戻る</a></div>
+  </footer>
+</body>
+</html>

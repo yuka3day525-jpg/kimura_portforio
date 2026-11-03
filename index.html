@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ポートフォリオ木村</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- ↑javaを手打ちしなくても、2,000以上のjQuery プラグインが公開されているサービス -->
+     <script src="js/jquery.bgswitcher.js"></script>
+    <!-- ↑フリーで配布されてるスライドショーのリンクを直下の専用のファイルに保存するのを忘れない、スライドショー用のプリントのリンク -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+     <!-- ↑グーグルフォント  -->
+     <link rel="shortcut icon" href="favicon/favicon (2).ico" type="image/x-icon">
+     <!-- ↑ファビコン -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- ↑フォントオーサム -->
+    <link rel="stylesheet" href="jikosyoukai.css?v=3">
+    <meta name="description" content="サンプル">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QWZZ22ZRRH"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-QWZZ22ZRRH');
+    </script>
+</head>
+<body>
+    <p class="hum">
+    <i class="fa-solid fa-bars open" style="color: rgb(15, 7, 169);"></i>
+    <i class="fa-solid fa-xmark close" style="color: black;"></i>
+    </p>
+    <!-- open,closeなどのクラスを付けるのを忘れない、fa-xmarkで×アイコン -->
+<header>
+    <nav>
+    <ul>
+    <li><a href="#point1">About</a></li>
+    <li><a href="#point2">Skills</a></li>
+    <li><a href="#point3">Works</a></li>
+    </ul>
+    </nav>
+</header>
+<article>
+<section class="main">
+ <h1><span>Yuka Kimura</span></h1>
+ <h1><span>Portfolio</span></h1>
+</section>
+<div class="kiji">
+<section class="Abaut" id="point1">
+<h2>About</h2>
+<div class="kiji1">
+<img src="image/94.png" alt="私を催したイラスト">
+<p>
+    木村友香と申します。前職では動物看護師として勤務していました。<br>
+    退職後はIT分野への転職を目指して職業訓練を受講し、
+    HTML・CSS・JavaScript・PHP・Python・MySQLなどを学習しました。
+    現在は学習内容を活かし、WebサイトやWebアプリケーションを制作しています。
+    未経験ではありますが、前職で培った丁寧さと正確性を活かしながら、
+    新しい技術を積極的に学び、成長していきたいと考えています。
+</p>
+</div>
+</section>
+<section id="point2">
+    <h2>Skills</h2>
+
+    <div class="skill">
+
+        <div class="skill-card">
+            <h3>Frontend</h3>
+            <p>HTML / CSS / JavaScript / jQuery</p>
+        </div>
+
+        <div class="skill-card">
+            <h3>Backend</h3>
+            <p>Python / Django / Flask / PHP</p>
+        </div>
+
+        <div class="skill-card">
+            <h3>Database</h3>
+            <p>MySQL / SQLite</p>
+        </div>
+
+        <div class="skill-card">
+            <h3>Data / ML</h3>
+            <p>pandas / scikit-learn / Gemini API / Chart.js</p>
+        </div>
+
+    </div>
+<p class="license">License</p>
+<div class="shiken">
+<p>2024.3 愛玩動物看護師</p>
+<p>2026.5 基本情報技術者試験</p>
+<p>2026.8 Python 3 エンジニア認定基礎試験</p>
+</div>
+</section>
+
+<section class="works" id="point3">
+    <h2 class="section-title">Works</h2>
+
+    <div class="work-inner">
+
+        <article class="work-item">
+
+            <!-- 作品画像 -->
+            <div class="work-image">
+                <a
+                    href="https://moneymind-demo.onrender.com/login/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <img
+                        src="image/スクリーンショット⓵.jpeg"
+                        alt="MoneyMindの家計管理ダッシュボード"
+                    >
+                </a>
+            </div>
+
+            <!-- 作品情報 -->
+            <div class="work-content">
+
+                <p class="work-category">PERSONAL PROJECT 01</p>
+
+                <h3 class="work-title">
+                    MoneyMind
+                    <span>二人で使う家計管理Webアプリ</span>
+                </h3>
+
+                <!-- 使用技術 -->
+                <ul class="work-tech">
+                    <li>Python</li>
+                    <li>Django</li>
+                    <li>JavaScript</li>
+                    <li>SQLite</li>
+
+                </ul>
+
+                <!-- 作品概要 -->
+                <p class="work-description">
+                    二人分の家計を、できるだけ手入力を減らして
+                    管理するために自主制作したWebアプリです。
+                    楽天カードや銀行の利用明細をCSVで取り込み、
+                    支出の自動分類や月別集計を行います。
+                    個人・世帯別の収支をグラフで可視化でき、
+                    NISAの評価額もあわせて管理できます。
+                    デモファイルを用意しているので取り込みから集計までお試しいただけます。
+                    詳しくは詳細をご覧ください。<br>
+
+                    <div class="demo-info">
+                    <p class="demo-title">デモアカウント</p>
+
+                    <div class="demo-user">
+                        <span class="demo-label">ユーザー1</span>
+
+                        <div class="demo-login">
+                            <p>
+                                <strong>ID</strong>
+                                <code>demo_user1</code>
+                            </p>
+
+                            <p>
+                                <strong>PW</strong>
+                                <code>user_port11</code>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="demo-user">
+                        <span class="demo-label">
+                            ユーザー2
+                        </span>
+
+                        <div class="demo-login">
+                            <p>
+                                <strong>ID</strong>
+                                <code>demo_user2</code>
+                            </p>
+
+                            <p>
+                                <strong>PW</strong>
+                                <code>user_port22</code>
+                            </p>
+                            <p class="demo-note">
+                                ※ CSV取り込みを試す場合はこちらのアカウントをご利用ください。
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+
+                <nav class="work-actions" aria-label="MoneyMindの関連リンク">
+                    <a
+                        href="https://moneymind-demo.onrender.com/login/"
+                        class="work-primary"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        サイトを見る
+                        <span aria-hidden="true">↗</span>
+                    </a>
+
+                    <a href="mm.html" class="work-secondary">
+                        詳細を見る
+                        <span aria-hidden="true">→</span>
+                    </a>
+
+                    <a
+                        href="https://github.com/yuka3day525-jpg/my_project_kakeikanri.git"
+                        class="work-secondary"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        GitHub
+                        <span aria-hidden="true">↗</span>
+                    </a>
+                </nav>
+                </p>
+
+            </div>
+
+        </article>
+
+        <article class="work-item">
+
+            <!-- 作品画像 -->
+            <div class="work-image">
+                <div class="work-image">
+                <a
+                    href="https://harry-potter-app-kkv4.onrender.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <img
+                        src="image/スクリーンショット⓶.jpeg"
+                        alt="ハリーポッターシリーズの呪文で英語学習"
+                    >
+                </a>
+            </div>
+            </div>
+
+            <!-- 作品情報 -->
+            <div class="work-content">
+
+                <p class="work-category">PERSONAL PROJECT 02</p>
+
+                <h3 class="work-title">
+                    Learning English with HarryPotter
+                    <span>ハリーポッターシリーズの呪文で英語学習アプリ</span>
+                </h3>
+
+                <!-- 使用技術 -->
+                <ul class="work-tech">
+                    <li>Python</li>
+                    <li>Flask</li>
+                    <li>JavaScript</li>
+                    <li>SQLite</li>
+
+                </ul>
+
+                <!-- 作品概要 -->
+                <p class="work-description">
+                    ハリー・ポッターの呪文を題材に、楽しく英語を学習できるWebアプリをFlaskで制作しました。
+                    外部APIから呪文情報を取得し、日本語訳の表示や英単語の抽出、辞書APIによる意味の検索を行っています。
+                    また、学習した呪文の保存・履歴閲覧・Excel形式でのダウンロードにも対応しています。
+                </p>
+
+                <!-- 作品リンク -->
+                <nav class="work-actions" aria-label="ハリーポッターの関連リンク">
+                    <a
+                        href="https://harry-potter-app-kkv4.onrender.com/"
+                        class="work-primary"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        サイトを見る
+                        <span aria-hidden="true">↗</span>
+                    </a>
+
+                    <a
+                        href="harry.html"
+                        class="work-secondary"
+                    >
+                        詳細を見る
+                        <span aria-hidden="true">→</span>
+                    </a>
+
+                    <a
+                        href="https://github.com/yuka3day525-jpg/harry_potter_app.git"
+                        class="work-secondary"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        GitHub
+                        <span aria-hidden="true">↗</span>
+                    </a>
+
+                </nav>
+
+            </div>
+
+        </article>
+
+        <article class="work-item">
+
+            <!-- 作品画像 -->
+            <div class="work-image">
+                <a
+                    href="http://kimura.atwebpages.com/daitinouta/index.php"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <img
+                        src="image/スクリーンショット⓷.jpeg"
+                        alt="大地の詩"
+                    >
+                </a>
+            </div>
+
+            <!-- 作品情報 -->
+            <div class="work-content">
+
+                <p class="work-category">PERSONAL PROJECT 03</p>
+
+                <h3 class="work-title">
+                    大地の詩
+                    <span>オーガニックブランドを模様したECサイト</span>
+                </h3>
+
+                <!-- 使用技術 -->
+                <ul class="work-tech">
+                    <li>PHP</li>
+                    <li>JavaScript</li>
+                    <li>MySQL</li>
+                </ul>
+
+                <!-- 作品概要 -->
+                <p class="work-description">
+                    自然派スキンケア商品を取り扱うECサイト「大地の詩」を、PHP・MySQLを用いて制作しました。
+                    商品一覧・詳細表示、カテゴリー別検索、カート機能、会員登録・ログイン、注文処理など、オンラインショップに必要な機能を実装しています。
+                    また、管理者向けに商品の登録・編集・販売終了、在庫管理、注文状況の確認・更新、顧客情報の閲覧機能も備えています。
+                    HTML・SCSS・JavaScript（jQuery）を使用し、デザインや操作性にも配慮しました。<br>
+
+                    <div class="demo-info">
+                    <p class="demo-title">デモアカウント</p>
+
+                    <div class="demo-user">
+                        <span class="demo-label">管理者ユーザー</span>
+
+                        <div class="demo-login">
+                            <p>
+                                <strong>ID</strong>
+                                <code>admin</code>
+                            </p>
+
+                            <p>
+                                <strong>PW</strong>
+                                <code>tanuki1234</code>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="demo-user">
+                        <span class="demo-label">
+                            一般ユーザー
+                        </span>
+
+                        <div class="demo-login">
+                            <p>
+                                <strong>ID</strong>
+                                <code>user</code>
+                            </p>
+
+                            <p>
+                                <strong>PW</strong>
+                                <code>user12345</code>
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+                </p>
+
+                <!-- 作品リンク -->
+                <nav class="work-actions" aria-label="大地の詩の関連リンク">
+                    <a
+                        href="http://kimura.atwebpages.com/daitinouta/index.php"
+                        class="work-primary"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        サイトを見る
+                        <span aria-hidden="true">↗</span>
+                    </a>
+
+                    <a
+                        href="daichi.html"
+                        class="work-secondary"
+                    >
+                        詳細を見る
+                        <span aria-hidden="true">→</span>
+                    </a>
+
+                    <a
+                        href="https://github.com/yuka3day525-jpg/daithi.git"
+                        class="work-secondary"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        GitHub
+                        <span aria-hidden="true">↗</span>
+                    </a>
+
+                </nav>
+
+            </div>
+
+        </article>
+
+        <article class="work-item">
+
+            <!-- 作品画像 -->
+            <div class="work-image">
+                <a
+                    href="http://kimura.atwebpages.com/poodle/index.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <img
+                        src="image/スクリーンショット⓸.jpeg"
+                        alt="Black poodle"
+                    >
+                </a>
+            </div>
+
+            <!-- 作品情報 -->
+            <div class="work-content">
+
+                <p class="work-category">PERSONAL PROJECT 04</p>
+
+                <h3 class="work-title">
+                    Black poodle
+                    <span>黒いトイプードルをテーマにした参加型Webサイト</span>
+                </h3>
+
+                <!-- 使用技術 -->
+                <ul class="work-tech">
+                    <li>PHP</li>
+                    <li>JavaScript</li>
+                    <li>MySQL</li>
+
+                </ul>
+
+                <!-- 作品概要 -->
+                <p class="work-description">
+                    黒いトイプードルをテーマにしたWebサイト「Black Poodle」を、PHP・MySQLを用いて制作しました。
+                    犬の紹介や写真ギャラリーに加え、PHPのセッション機能を利用したクイズや、画像を投稿できる掲示板を実装しています。
+                    掲示板では投稿内容の確認画面や、1端末につき1日1回の投稿制限を設けています。
+                    また、RSSを利用した犬関連ニュースの表示にも対応し、情報の閲覧だけでなく、ユーザーが参加して楽しめるサイトを目指しました。
+                </p>
+
+                <!-- 作品リンク -->
+                <nav class="work-actions" aria-label="プードルの関連リンク">
+                    <a
+                        href="http://kimura.atwebpages.com/poodle/index.html"
+                        class="work-primary"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        サイトを見る
+                        <span aria-hidden="true">↗</span>
+                    </a>
+
+                    <a
+                        href="black-poodle.html"
+                        class="work-secondary"
+                    >
+                        詳細を見る
+                        <span aria-hidden="true">→</span>
+                    </a>
+
+                    <a
+                        href="https://github.com/yuka3day525-jpg/poodle.git"
+                        class="work-secondary"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        GitHub
+                        <span aria-hidden="true">↗</span>
+                    </a>
+
+                </nav>
+
+            </div>
+
+        </article>
+
+        <article class="work-item">
+
+            <!-- 作品画像 -->
+            <div class="work-image">
+                <img
+                    src="image/スクリーンショット⓹.jpeg"
+                    alt="読書記録アプリ"
+                >
+            </div>
+
+            <!-- 作品情報 -->
+            <div class="work-content">
+
+                <p class="work-category">PERSONAL PROJECT 05</p>
+
+                <h3 class="work-title">
+                    読書記録アプリ
+                    <span>Python・Tkinterを用いたデスクトップアプリ</span>
+                </h3>
+
+                <!-- 使用技術 -->
+                <ul class="work-tech">
+                    <li>Python</li>
+                    <li>Tkinter</li>
+                </ul>
+
+                <!-- 作品概要 -->
+                <p class="work-description">
+                   職業訓練の初期に、PythonのTkinterを用いて読書記録アプリを制作しました。
+                    書名・著者・5段階の評価・感想を入力し、読んだ本の情報を記録できます。
+                    保存した内容は日付付きでテキストファイルに追記され、後から確認することができます。
+                    また、入力漏れを防ぐメッセージ表示にも対応し、GUIの部品配置やイベント処理、ファイルの読み書きなど、Pythonの基礎学習で習得した内容を活用しました。
+                </p>
+
+                <!-- 作品リンク -->
+                <nav class="work-actions" aria-label="tkinterの関連リンク">
+
+                    <a
+                        href="tkinter.html"
+                        class="work-secondary"
+                    >
+                        詳細を見る
+                        <span aria-hidden="true">→</span>
+                    </a>
+
+                    <a
+                        href="https://github.com/yuka3day525-jpg/tkinter.git"
+                        class="work-secondary"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        GitHub
+                        <span aria-hidden="true">↗</span>
+                    </a>
+
+                </nav>
+
+            </div>
+
+        </article>      
+        
+    </div>
+</section>
+</div>
+</article>
+<footer>
+<small>&copy; 2026 Yuka Kimura.</small>
+</footer>
+<script>
+$(".hum").click(function () {
+$("nav").toggleClass("show");
+});
+</script>
+<script>
+$(".hum").click(function () {
+$(".hum").toggleClass("show2");
+});
+</script>
+</body>
+</html>
+
+

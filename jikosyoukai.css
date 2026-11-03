@@ -1,0 +1,517 @@
+@charset "utf-8";
+body{
+    margin: 0;
+    padding: 0;
+}
+html{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    /* ↑デフォルトを16pxから10pxに変更remでの計算を楽にする */
+}
+header ul{
+    background-color: rgb(76, 68, 197);
+    color: #ffffff;
+    display: flex;
+    height: 55px;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    /* justify-content: space-around; */
+    align-items: center;
+}
+/* ulで初期の左余白を消す */
+header li{
+    flex:1;
+    text-align: center;
+    font-size: 1.8rem;
+    border-right: 1px dotted #f1ecec;
+}
+/* flex1で6個同じ幅にする、テキストアラインで真ん中へ */
+nav ul a{
+    text-decoration: none;
+    color: #ffffff;
+    display: block;
+}
+nav ul a:hover{
+    color: aqua;
+}
+.main{
+    background-color: rgb(210, 250, 250);
+    height: 80vh;
+    background-image: url(image/umi.png);
+    background-size: cover;
+    background-attachment: fixed;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.main h1{
+    margin: 8px 0;
+    width: 90%;
+    max-width: 1000px;
+    font-size: 4.2rem;
+    font-family: "Abril Fatface", serif;
+    /* margin: 10px 20px; */
+    /* display: grid;
+    grid-template-columns: 1fr; */
+}
+.main h1 span{
+    display: inline-block;
+    color: #fbfeff;
+    background-color: rgba(0, 20, 20, 0.384);
+    border-radius: 20px;
+    padding: 10px 20px;
+    letter-spacing: 0.1em;
+}
+.kiji{
+    width: 90%;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+    line-height: 1.7;
+}
+/* ↑１２００を打つならmaxwidthへ、そのあとスマホ用にwidth90% */
+h2{
+    color: #2a38bd;
+    font-size: 3.5rem;
+    margin: 0;
+    padding-top: 50px;
+    padding-bottom: 30px;
+    text-align: center;
+    text-shadow: 0px 20px 8px rgba(20, 2, 61, 0.4);
+}
+.Abaut img{
+    width: 350px;
+    max-width: 100%;
+    height:auto;
+}
+.kiji1 p{
+    font-size: 1.7rem;
+    padding-top:60px;
+    width: 100%;
+}
+.kiji1{
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	gap:10px
+}
+.skill {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.skill-card {
+    background-color: #ffffff;
+    border: 1px solid #dfe4f2;
+    border-radius: 15px;
+    padding: 28px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+.skill-card h3 {
+    margin: 0 0 10px;
+    font-size: 2.2rem;
+    color: #2a38bd;
+}
+
+.skill-card p {
+    margin: 0;
+    font-size: 1.8rem;
+    line-height: 1.7;
+    color: #333333;
+}
+footer{
+    height: 40px;
+    background-color: rgb(76, 68, 197);
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+}
+.hoshi{
+    display: flex;
+    /* background-color: #97a0ea; */
+    gap: 280px;
+    color: #2a38bd;
+}
+.hoshi p{
+    flex:1;
+    font-size: 1.7rem;
+    margin-top: 10px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+.license{
+    font-size: 2.5rem;
+    /* background-color: aqua; */
+    margin-top: 50px;
+    margin-bottom: 2px;
+    border-bottom: 3.2px solid #0a1aff;
+}
+.shiken{
+    font-size: 1.5rem;
+    /* background-color: azure; */
+    line-height: 1.0;
+    margin: 0;
+    width: 100%;
+}
+.shiken p{
+    padding: 5px;
+    border-bottom: 1px solid #0a1aff ;
+}
+/* ==========================
+   Works
+========================== */
+
+.works {
+    padding: 50px 5% 90px;
+}
+
+.works .section-title {
+    max-width: 1100px;
+    margin: 0 auto 50px;
+    padding: 0 0 15px;
+}
+
+/* 作品一覧全体 */
+.work-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* 作品1件 */
+.work-item {
+    display: grid;
+    grid-template-columns: 40% 1fr;
+    gap: 45px;
+    align-items: start;
+
+    padding: 45px 0;
+    border-bottom: 1px solid #d8def0;
+}
+
+.work-item:last-child {
+    border-bottom: none;
+}
+
+/* 作品画像 */
+.work-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 1px solid #e0e5f0;
+    border-radius: 10px;
+}
+
+/* 作品情報 */
+.work-content {
+    min-width: 0;
+}
+
+/* 制作区分 */
+.work-category {
+    margin: 0 0 10px;
+    font-size: 1.3rem;
+    letter-spacing: 0.1em;
+    color: #626f91;
+}
+
+/* 作品タイトル */
+.work-title {
+    margin: 0 0 20px;
+    font-size: 2.5rem;
+    line-height: 1.5;
+    color: #202a49;
+}
+
+.work-title span {
+    display: block;
+    font-size: 1.6rem;
+    font-weight: normal;
+    color: #52617c;
+}
+
+/* 使用技術 */
+.work-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    padding: 0;
+    margin: 0 0 25px;
+    list-style: none;
+}
+
+.work-tech li {
+    padding: 6px 12px;
+    background-color: #e8edff;
+    color: #273ba9;
+    border-radius: 5px;
+    font-size: 1.3rem;
+}
+
+/* 作品説明 */
+.work-description {
+    margin: 0;
+    font-size: 1.5rem;
+    line-height: 1.9;
+    color: #333b50;
+}
+
+.demo-info {
+    margin: 20px 0 25px;
+    padding: 18px;
+    background-color: #f5f7ff;
+    border: 1px solid #d9e0f5;
+    border-radius: 10px;
+}
+
+.demo-title {
+    margin: 0 0 12px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #2439a8;
+}
+
+.demo-user {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 15px;
+    padding: 12px 0;
+    border-top: 1px solid #d9e0f5;
+}
+
+.demo-user:first-of-type {
+    border-top: none;
+}
+
+.demo-label {
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.demo-note {
+    width: 100%;
+    font-size: 1.2rem !important;
+    color: #64748b;
+}
+
+.demo-login {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.demo-login p {
+    margin: 0;
+    font-size: 1.4rem;
+}
+
+.demo-login strong {
+    margin-right: 6px;
+    color: #52617c;
+}
+
+.demo-login code {
+    padding: 3px 7px;
+    background-color: #ffffff;
+    border-radius: 4px;
+}
+
+/* ログイン情報 */
+.work-credentials {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 0 0 15px;
+}
+
+.work-credentials div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.work-credentials dt {
+    font-size: 1.2rem;
+    color: #69758d;
+}
+
+.work-credentials dd {
+    margin: 0;
+    font-size: 1.4rem;
+    color: #202a49;
+}
+
+/* CSVダウンロード */
+.work-download {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    font-size: 1.3rem;
+    color: #273ba9;
+    text-decoration: none;
+}
+
+.work-download:hover {
+    text-decoration: underline;
+}
+
+/* ==========================
+   作品リンク
+========================== */
+
+.work-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 25px;
+    margin-top: 30px;
+}
+
+/* メインボタン */
+.work-primary {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+
+    padding: 13px 24px;
+
+    background-color: #273ba9;
+    color: white;
+
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+
+    border-radius: 6px;
+    transition: 0.2s;
+}
+
+.work-primary:hover {
+    background-color: #182b85;
+    transform: translateY(-2px);
+}
+
+/* 詳細・GitHubリンク */
+.work-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 8px 0;
+
+    color: #273ba9;
+    font-size: 1.5rem;
+    text-decoration: none;
+
+    border-bottom: 1px solid #a7b4e0;
+    transition: 0.2s;
+}
+
+.work-secondary:hover {
+    color: #101c64;
+    border-color: #101c64;
+}
+
+.hum{
+    display: none;
+}
+
+@media screen and (max-width: 600px){
+
+.skill,
+.hoshi{
+    grid-template-columns: 1fr;
+}
+.kiji1{
+    grid-template-columns:1fr;
+}
+.kiji p{
+    padding-top: 0px;
+    margin-top: 0;
+}
+.skill p{
+    padding-top: 30px;
+    margin-top: 10px;
+}
+.license{
+    margin-bottom: 20px;
+}
+.work-item{
+    grid-template-columns:1fr;
+}
+.work-item img{
+    height:auto;
+}
+/* height: auto; は 高さを自動調整する という意味です。
+画像の場合、元の画像の縦横比を維持したまま高さを決める動きになります。 */
+header nav{
+    position: fixed;
+    top: -1000px;
+}
+/* ↑いったんめっちゃ上にして見えなくする */
+.hum{
+    display: block;
+	position: fixed;
+	/* ブラウザに固定  */
+	right: 15px;
+	top: 8px;
+    padding: 6px;
+    padding-left: 11px;
+    font-size: 3rem;
+    cursor:pointer;
+    z-index:9999;
+}
+/* ↑display blockをしないと戻ってきてくれないので忘れないように  corsor;pointerとｚ9999をしている理由はハンバーガを前面へ出さないと反応して
+くれなくなるのでこうしてる*/
+.open{
+    display: block; /*最初は三ボタン見える*/
+}
+.close{
+    display: none; /*最初は×ボタン見えないよ*/
+}
+.show{
+    display: block;
+    position: fixed;
+    top: 0px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(2, 25, 88, 0.419);
+    font-size: 2.5rem;
+    transition-duration: 0.5s;
+}
+.show2 .open{
+    display: none;
+}
+.show2 .close{
+    display: block !important;
+}
+/* ↑消える */
+nav.show ul{
+    display:block;
+    height:auto;
+    background: none;
+}
+nav.show li{
+    text-align:center;
+    border:none;
+    margin:30px 0;
+}
+nav.show a{
+    color:#fff;
+    font-size:2.6rem;
+}
+/* ↑showというクラスを作ってなくても、Java Script側で実行されたら自動的にshowというクラスが付くので大丈夫 */
+.nande{
+    margin:auto;
+}
+}

@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="MoneyMind｜二人で使う家計管理Webアプリの制作背景、主な機能、開発時の工夫、デモ動画を紹介するポートフォリオ詳細ページです。">
+  <title>MoneyMind | Works Detail</title>
+  <link rel="stylesheet" href="works.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="container">
+      <a class="brand" href="index.html">PORTFOLIO</a>
+      <a class="back-link" href="index.html#point3">← Works一覧に戻る</a>
+    </div>
+  </header>
+
+  <section class="hero" aria-labelledby="page-title">
+    <div class="container">
+      <p class="eyebrow">PERSONAL PROJECT / 01</p>
+      <h1 id="page-title">MoneyMind</h1>
+      <p class="hero-sub">二人で使う家計管理Webアプリ</p>
+      <p class="hero-desc">CSV明細の取り込み・整形から、支出の自動分類、分類ルールの蓄積、収支の可視化まで。使うほど繰り返しの分類作業を減らせる家計管理Webアプリケーションです。</p>
+      <ul class="tag-list" aria-label="使用技術">
+        <li>Python</li><li>Django</li><li>pandas</li><li>NumPy</li><li>openpyxl</li><li>JavaScript</li><li>scikit-learn</li><li>Gemini API</li><li>Chart.js</li>
+        <!-- 実際のsettings.pyを確認し、必要なら <li>SQLite</li> などを追加 -->
+      </ul>
+      <div class="actions">
+        <a class="btn btn-light" href="https://moneymind-demo.onrender.com/login/" target="_blank" rel="noopener noreferrer">デモサイトを見る ↗</a>
+        <!-- TODO: 公開用のGitHubリポジトリURLに差し替える -->
+        <a class="btn btn-outline" href="https://github.com/yuka3day525-jpg/my_project_kakeikanri.git">GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <nav class="page-nav" aria-label="ページ内メニュー">
+    <div class="container">
+      <a href="#overview">概要</a><a href="#feature-details">機能の詳細</a><a href="#demo">デモ体験</a><a href="#video">操作動画</a><a href="#development">開発の工夫</a><a href="#ai">生成AI活用</a><a href="#future">今後の改善</a>
+    </div>
+  </nav>
+
+  <main class="container">
+
+    <section class="detail" id="overview">
+      <div class="section-head"><p class="section-no">01 / OVERVIEW</p><h2>制作背景・作品概要</h2></div>
+      <div class="summary">
+        <p>二人の家計を管理するなかで、カードや銀行の明細を毎回手入力する負担を減らしたいと考え、MoneyMindを制作しました。</p>
+        <p>カード・銀行の利用明細をCSVで取り込み、pandasで形式を整えてデータベースに保存。取引先名に応じた支出分類と分類ルールの蓄積、個人と世帯全体の切り替え、月別の収支・グラフ、NISA評価額の記録まで、一つの画面から管理できることを目指しました。</p>
+        <dl class="meta">
+          <div><dt>制作区分</dt><dd>自主制作</dd></div>
+          <div><dt>開発言語・フレームワーク・データベース</dt><dd>Python / Django / JavaScript / SQLite</dd></div>
+          <div><dt>データ処理・外部API</dt><dd>pandas / NumPy / openpyxl / scikit-learn（TF-IDF・ロジスティック回帰）/ Gemini API / Chart.js</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="detail" id="feature-details">
+      <div class="section-head"><p class="section-no">02 / FEATURE DETAILS</p><h2>機能の詳細</h2>
+        
+<p class="section-lead">スクリーンショットとともに、入力から集計までの流れを紹介します。</p></div>
+      <article class="detail-feature">
+        <figure class="feature-picture">
+          <img src="image/mm-csv.jpg" alt="CSV取り込み画面">
+          <figcaption>CSV取り込み</figcaption>
+        </figure>
+        <div class="feature-copy"><p class="small-number">FEATURE 01</p><h3>CSV取り込み・データ整形</h3>
+          <p>
+              楽天カード・楽天銀行・三菱UFJ銀行・ろうきんの
+              4種類の利用明細に対応しています。
+              金融機関ごとに異なるCSVの形式をpandasで整形し、
+              データベースに保存できるようにしました。
+          </p>
+
+          <p>
+              日付や金額、取引先名などのデータ形式を統一することで、
+              異なる金融機関の明細を一つのアプリで
+              管理できるようにしています。
+          </p>
+          <ul><li>CSVアップロード</li><li>pandasによるデータ整形</li><li>整形データのデータベース登録</li></ul></div>
+      </article>
+
+      <article class="detail-feature">
+        <figure class="feature-picture">
+          <img src="image/mm-category.jpg" alt="明細のカテゴリ自動分類と修正画面">
+  
+          <figcaption>自動分類と分類ルールの管理</figcaption>
+        </figure>
+        <div class="feature-copy"><p class="small-number">FEATURE 02</p><h3>支出の自動分類・ルール保存</h3><p>取引先名をNFKC正規化・大文字化して表記ゆれを抑え、①世帯別の保存済みルール（長いキーワードから優先）②固定ルール③機械学習モデル ④AIの順にカテゴリを判定します。機械学習の予測信頼度が0.6以上なら予測結果を採用し、それ未満なら「未分類」とします。後に分類結果は手動で修正でき、取引先とカテゴリの対応を次回の取込に再利用できます。</p><ul><li>取引先名に応じたカテゴリ判定</li><li>機械学習によるカテゴリ予測（信頼度0.6以上を採用）</li><li>手動修正と分類ルール保存</li><li>登録済みデータの再利用による分類作業の効率化</li><li>Gemini APIを利用したAI分類</li></ul></div>
+      </article>
+
+      <article class="detail-feature">
+        <figure class="feature-picture">
+          <img src="image/mm-switch.jpg" alt="個人と世帯を切り替える明細表示画面" >
+
+          <figcaption>個人・世帯の切替と明細一覧</figcaption>
+        </figure>
+        <div class="feature-copy"><p class="small-number">FEATURE 03</p><h3>個人・世帯ごとの明細管理</h3><p>取引データを個人と世帯の単位で管理し、表示対象を切り替えられるようにしました。月別の明細や収支をそれぞれ確認できます。</p><ul><li>個人／世帯の表示切り替え</li><li>月別URLによる明細表示</li><li>取引ごとのカテゴリ確認</li></ul></div>
+      </article>
+
+      <article class="detail-feature">
+        <figure class="feature-picture">
+            <img
+                src="image/mm-graphs.jpg"
+                alt="月別収支やカテゴリ別支出を可視化したグラフ画面"
+                
+            >
+            
+            <figcaption>月別集計・グラフ表示</figcaption>
+        </figure>
+
+        <div class="feature-copy">
+            <p class="small-number">FEATURE 04</p>
+
+            <h3>明細管理・収支の可視化</h3>
+
+            <p>
+                取り込んだ明細は月別に一覧表示され、
+                カテゴリの確認や編集ができます。
+                自動分類されたカテゴリが適切でない場合は、
+                手動で修正し、分類ルールとして保存することで
+                次回以降の取り込みにも反映できます。
+            </p>
+
+            <p>
+                また、個人と世帯全体の表示を切り替えながら、
+                月ごとの収支やカテゴリ別の支出内訳、
+                支出の推移をグラフで確認できます。
+                数値の一覧だけでなく、家計の状況を
+                視覚的に把握できるようにしました。
+            </p>
+
+            <ul>
+                <li>月別の収支・明細一覧表示</li>
+                <li>支出カテゴリの手動編集</li>
+                <li>編集したカテゴリの分類ルール保存</li>
+                <li>個人・世帯全体の表示切り替え</li>
+                <li>カテゴリ別の支出内訳表示</li>
+                <li>月別収支や支出推移のグラフ表示</li>
+            </ul>
+        </div>
+      </article>
+
+      <article class="detail-feature">
+        <figure class="feature-picture">
+            <img
+                src="image/mm-nisa.jpg"
+                alt="銀行口座の残高とNISA評価額を表示する資産管理画面"
+                
+            >
+
+            
+
+            <figcaption>銀行残高・NISA評価額の管理</figcaption>
+        </figure>
+
+        <div class="feature-copy">
+            <p class="small-number">FEATURE 05</p>
+
+            <h3>銀行残高・NISA評価額の資産管理</h3>
+
+            <p>
+                銀行の利用明細から取得した口座残高と、
+                手動で入力したNISAの評価額を組み合わせ、
+                現金資産と投資資産をまとめて確認できるようにしました。
+            </p>
+
+            <p>
+                日々の収支管理だけでなく、
+                現在の資産状況も把握できるようにすることで、
+                家計全体を一つのアプリで管理できる構成にしています。
+            </p>
+
+            <ul>
+                <li>銀行明細から口座残高を自動取得・表示</li>
+                <li>NISAの評価額を手動で入力・記録</li>
+                <li>それぞれの銀行残高とNISA評価額を組み合わせた資産管理</li>
+            </ul>
+        </div>
+    </article>
+    </section>
+
+    <section class="detail" id="demo">
+      <div class="section-head"><p class="section-no">03 / LIVE DEMO</p><h2>デモサイトを試す</h2><p class="section-lead">公開用のデモアカウントとサンプルCSVを用意しています。</p></div>
+      <div class="demo-grid">
+        <div class="demo-panel">
+          <h3>デモアカウント</h3>
+          <p>下記のアカウントでログインし、各画面をご確認いただけます。</p>
+          <table class="credential-table"><tbody>
+            <tr><th scope="row">ユーザー1</th><td><code>ユーザー:demo_user1</code> / <code>パスワード:user_port11</code></td></tr>
+            <tr><th scope="row">ユーザー2</th><td><code>ユーザー:demo_user2</code> / <code>パスワード:user_port22</code></td></tr>
+          </tbody></table>
+          <a class="btn btn-blue" href="https://moneymind-demo.onrender.com/login/" target="_blank" rel="noopener noreferrer">デモサイトを開く ↗</a>
+          <p class="hint">※ デモ専用アカウント</p>
+        </div>
+        <div class="demo-panel">
+        <h3>クレジットカード明細をダウンロード</h3>
+
+        <p>
+            CSV取り込み機能を試す際は、
+            こちらのサンプル明細をご利用ください。
+            <strong>クレジットカード明細をアップロード</strong>を選択してください。
+        </p>
+
+        <div class="warn">
+            CSV取り込みをお試しの際は、
+            <strong>デモユーザー2（demo_user2）</strong>
+            でログインしてください。
+        </div>
+
+        <a
+            class="file-link"
+            href="image/demo_user2_card明細2026年3月.csv"
+            download
+        >
+            ↓ デモ用クレジットカード明細をダウンロード
+        </a>
+
+        <p class="hint">
+            ファイル名：demo_user2_card明細2026年3月.csv
+        </p>
+
+        <p class="hint">
+            ※ CSV取り込みが正常に動作しない場合は、
+            操作デモ動画から取り込み手順と結果をご確認いただけます。
+        </p>
+      </div>
+      </div>
+      <div class="note-panel" style="margin-top:17px">
+        <h3>操作の流れ</h3>
+        <div class="flow" aria-label="デモ操作手順"><div class="flow-step">1. ログイン</div><div class="flow-step">2. CSV取得</div><div class="flow-step">3. CSVアップロード</div><div class="flow-step">4. 明細・グラフ確認</div></div>
+      </div>
+    </section>
+
+    <section class="detail" id="video">
+      <div class="section-head"><p class="section-no">04 / VIDEO</p><h2>操作デモ動画</h2>
+      <p>
+          公開環境ではRenderの無料枠やGemini APIを利用しているため、
+          起動直後やAPIの利用状況によっては処理に時間がかかったり、
+          一時的に正常に動作しない場合があります。
+          その場合にも主要機能や操作の流れを確認できるよう、
+          実際の動作を動画で紹介しています。
+      </p>
+
+
+      </div>
+      <div class="video-panel">
+        <div class="video-wrap">
+          <!-- video/moneymind-demo.mp4 に録画した動画を配置してください -->
+          <video controls preload="metadata" playsinline poster="image/スクリーンショット⓵.jpeg" aria-label="MoneyMind操作デモ動画">
+            <source src="video/moneymind-demo.mp4" type="video/mp4">
+            <p class="video-fallback">動画を再生できない場合は、対応ブラウザでご確認ください。</p>
+          </video>
+        </div>
+        <p class="hint">収録内容：CSV取込 → 支出の分類・修正 → 個人／世帯切替 → 集計グラフ。</p>
+      </div>
+    </section>
+
+    <section class="detail" id="development">
+      <div class="section-head"><p class="section-no">05 / DEVELOPMENT</p><h2>開発で工夫したこと</h2></div>
+      <div class="two-col">
+        <article class="info-card"><h3>CSV形式の違いへの対応</h3>
+          <p>
+            楽天カード・楽天銀行・三菱UFJ銀行・ろうきんで
+            異なるCSV形式を、pandasを用いて自動的に整形する処理を実装しました。
+            これにより、各金融機関からダウンロードしたCSVファイルを
+            手作業で加工することなく、そのままアプリに取り込めるようにしました。
+        </p></article>
+        <article class="info-card"><h3>分類の手間を減らす設計</h3><p>保存済みルール・固定ルール・機械学習・AIの4段階で分類し、機械学習の信頼度が低い結果は自動確定しない設計にしました。修正したルールは次回の分類に再利用することで分類する手間を減らしました。</p></article>
+        <article class="info-card">
+            <h3>Chart.jsによる収支の可視化</h3>
+            <p>
+                データベースに保存した明細を集計し、
+                JavaScriptのChart.jsを用いてグラフを作成しました。
+                カテゴリ別の支出内訳や月別の収支推移を表示するほか、
+                複数のカテゴリをまとめて集計することで、
+                家計全体の支出傾向を把握しやすくしています。
+                また、個人と世帯全体の表示切り替えにも対応し、
+                それぞれの収支状況を視覚的に確認できるようにしました。
+            </p>
+        </article>
+        <article class="info-card"><h3>デモ用環境の分離</h3><p>
+            Renderを利用してWebアプリケーションをデプロイし、
+            ブラウザから実際に操作できる環境を構築しました。
+            また、ポートフォリオ閲覧者が安心して機能を試せるよう、
+            通常利用するデータベースとデモ用データベースを分離しています。
+        </p></article>
+      </div>
+    </section>
+
+    <!-- <section class="detail" id="challenges">
+      <div class="section-head"><p class="section-no">07 / CHALLENGES</p><h2>苦労した点・解決方法</h2><p class="section-lead">以下はこれまでの制作内容をもとにした文章案です。実際に自分が苦労した点・検証した手順に合わせて書き換えてください。</p></div>
+      <article class="challenge"><h3>課題 1：明細ごとに異なるCSV形式</h3><p><strong>課題：</strong>カード・銀行によって項目や金額の表現が異なり、そのままでは共通の処理で取り込みにくいこと。</p><p><strong>対応：</strong>pandasで形式を整える処理を分け、保存前にアプリ内で扱いやすい形に揃えました。</p></article>
+      <article class="challenge"><h3>課題 2：自動分類の精度と修正のしやすさ</h3><p><strong>課題：</strong>取引先名だけでは期待どおりの分類にならないケースがあること。</p><p><strong>対応：</strong>分類を手動修正できる画面を用意し、修正したルールを保存して次回の分類にも利用できるようにしました。</p></article>
+      <article class="challenge"><h3>課題 3：公開環境での動作確認</h3><p><strong>課題：</strong>公開環境では、ローカル環境と同じ条件でCSV取込が動作しない場合があります。</p><p><strong>対応：</strong>デモ用データを分離し、再現手順を確認できる操作動画も掲載します。今後も不安定な条件の切り分けと修正を進めます。</p></article>
+    </section> -->
+
+    <section class="detail" id="ai">
+      <div class="section-head"><p class="section-no">06 / GENERATIVE AI</p><h2>生成AIの活用</h2><p class="section-lead">アプリの中で使うAIと、開発を補助するAIは役割を分けて紹介します。</p></div>
+      <div class="two-col">
+        <article class="info-card"><span class="ai-label">アプリ内のAI機能</span><h3>Gemini APIによる分類</h3><p>Gemini APIを使ったカテゴリのAI分類も実装しています。保存済みルールや機械学習による分類と組み合わせて、明細のカテゴリ判定に活用しています。</p></article>
+        <article class="info-card"><span class="ai-label">開発過程のAI活用</span><h3>実装方法の検討・エラー調査の補助</h3><p>生成AIを、実装方法の調査やエラーの原因を整理するための補助として活用しました。提案された内容は処理を確認しながら適用し、実際の動作を見て修正する形で開発を進めました。</p></article>
+      </div>
+      <!-- <p class="hint">※ 開発過程の文章は、実際の生成AIの使い方に合わせて調整してください。</p> -->
+    </section>
+
+    <section class="detail" id="future">
+      <div class="section-head"><p class="section-no">07 / NEXT STEPS</p><h2>今後の改善点</h2></div>
+      <div class="callout">
+          <p>
+              今後はSeleniumを活用し、金融機関のWebサイトから
+              利用明細を自動取得・取り込みできる機能を実装したいと考えています。
+              これにより、CSVファイルを手動でダウンロードする手間を減らし、
+              より効率的に家計を管理できるようにしたいです。
+          </p>
+
+          <p style="margin-bottom:0">
+              また、対応する銀行やクレジットカードを増やし、
+              ユーザーが利用している金融機関を選択して
+              明細を取り込める仕組みを目指しています。
+              あわせて、既存機能の安定性や操作性も改善し、
+              より実用的な家計管理アプリへ発展させたいと考えています。
+          </p>
+      </div>
+      <div class="actions"><a class="btn btn-blue" href="https://moneymind-demo.onrender.com/login/" target="_blank" rel="noopener noreferrer">デモサイトを見る ↗</a><a class="btn" style="background:#fff;border-color:#c9d5ec;color:#243765" href="index.html#point3">← Works一覧へ戻る</a></div>
+    </section>
+  </main>
+  <footer><div class="container">© Portfolio — <a href="index.html#point3">Works一覧に戻る</a></div></footer>
+</body>
+</html>

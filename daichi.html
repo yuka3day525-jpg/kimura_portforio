@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="大地の詩｜PHP・MySQLで制作したECサイトの機能と開発の工夫を紹介するポートフォリオ詳細ページです。">
+  <title>大地の詩 | Works Detail</title>
+  <link rel="stylesheet" href="works.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="container">
+      <a class="brand" href="index.html">PORTFOLIO</a>
+      <a class="back-link" href="index.html#point3">← Works一覧に戻る</a>
+    </div>
+  </header>
+
+  <section class="hero" aria-labelledby="page-title">
+    <div class="container">
+      <p class="eyebrow">TRAINING PROJECT / 03</p>
+      <h1 id="page-title">大地の詩</h1>
+      <p class="hero-sub">オーガニックブランドを模様したECサイト</p>
+      <p class="hero-desc">商品を探す・カートに入れる・購入手続きを進める流れに加え、顧客や商品を扱う管理者画面も制作した、自然派スキンケア商品を取り扱うECサイトです。</p>
+      <ul class="tag-list" aria-label="使用技術">
+        <li>HTML / CSS</li>
+        <li>PHP</li>
+        <li>MySQL</li>
+        <li>JavaScript</li>
+        <li>jQuery</li>
+        <li>SCSS</li>
+      </ul>
+      <div class="actions">
+        <a class="btn btn-light" href="http://kimura.atwebpages.com/daitinouta/index.php" target="_blank" rel="noopener noreferrer">デモサイトを見る ↗</a>
+        <!-- TODO: 公開用のGitHubリポジトリURLに差し替える -->
+        <a class="btn btn-outline" href="https://github.com/yuka3day525-jpg/daithi.git">GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <nav class="page-nav" aria-label="ページ内メニュー">
+    <div class="container">
+      <a href="#overview">概要</a>
+      <a href="#feature-details">機能の詳細</a>
+      <a href="#development">開発の工夫</a>
+      <a href="#ai">生成AI活用</a>
+      <a href="#future">今後の改善</a>
+    </div>
+  </nav>
+
+  <main class="container">
+    <section class="detail" id="overview">
+      <div class="section-head">
+        <p class="section-no">01 / OVERVIEW</p>
+        <h2>制作背景・作品概要</h2>
+      </div>
+      <div class="summary">
+        <p>PHPとMySQLを活用し、商品を選ぶ利用者側と、商品・顧客を管理する運営側の両方を備えたECサイトを制作しました。</p>
+        <p>商品一覧・詳細表示、検索やカテゴリによる絞り込み、カート、会員ログインに加え、管理者専用ページでのデータ管理にも取り組みました。画面の演出にはjQueryも利用しています。</p>
+        <dl class="meta">
+          <div><dt>制作区分</dt><dd>自主制作</dd></div>
+          <div><dt>開発言語・データベース</dt><dd>HTML / CSS / PHP / MySQL</dd></div>
+          <div><dt>使用技術</dt><dd>jQuery / SESSION / SCSS / </dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="detail" id="feature-details">
+      <div class="section-head">
+        <p class="section-no">02 / FEATURE DETAILS</p>
+        <h2>機能の詳細</h2>
+        <p class="section-lead">利用者向け画面と管理者向け画面に分けて、主な機能を紹介します。</p>
+      </div>
+
+      <article class="detail-feature">
+        <figure class="feature-picture">
+          <img src="image/daichi-products.jpg" alt="大地の詩の商品一覧画面" >
+          
+          <figcaption>商品一覧・カテゴリ検索</figcaption>
+        </figure>
+        <div class="feature-copy">
+          <p class="small-number">FEATURE 01</p>
+
+          <h3>商品一覧・検索・在庫表示</h3>
+
+          <p>
+              MySQLに登録した商品情報をPHPで取得し、
+              商品一覧に表示しています。
+              商品名によるキーワード検索やカテゴリでの絞り込み、
+              価格の安い順・高い順、新着順での並び替えに対応しています。
+          </p>
+
+          <p>
+              また、在庫数に応じて「残りわずか」などの表示を出し、
+              商品の在庫状況が一覧から分かるようにしました。
+              各商品には詳細ページを用意し、
+              商品説明や価格、在庫状況などをより詳しく確認できます。
+          </p>
+
+          <ul>
+              <li>商品名によるキーワード検索</li>
+              <li>カテゴリでの絞り込み</li>
+              <li>価格順・新着順の並び替え</li>
+              <li>在庫数に応じた在庫状況の表示</li>
+              <li>商品詳細ページでの詳細情報表示</li>
+          </ul>
+      </div>
+      </article>
+
+      <article class="detail-feature">
+          <figure class="feature-picture">
+              <img
+                  src="image/daichi-cart.jpg"
+                  alt="ショッピングカート画面">
+                  
+              <figcaption>ショッピングカート</figcaption>
+          </figure>
+
+          <div class="feature-copy">
+              <p class="small-number">FEATURE 02</p>
+
+              <h3>カート・購入処理・在庫管理</h3>
+
+              <p>
+                  商品をカートに追加し、購入手続きまで進められるようにしました。
+                  カート情報はPHPのセッションで保持し、
+                  ページを移動しても選択した商品や数量が残る構成です。
+              </p>
+
+              <p>
+                  注文確定時には商品の販売状態と在庫数を再確認し、
+                  カート追加後に販売停止となった商品や、
+                  在庫切れになった商品は注文できないようにしています。
+                  また、注文が完了すると購入数量に応じて在庫数を減らします。
+              </p>
+
+              <ul>
+                  <li>商品のカート追加・数量管理</li>
+                  <li>セッションによるカート内容の保持</li>
+                  <li>購入時の販売状態・在庫数の再確認</li>
+                  <li>販売停止・在庫切れ商品の注文防止</li>
+                  <li>注文完了時の在庫数更新</li>
+              </ul>
+          </div>
+      </article>
+
+      <article class="detail-feature">
+          <figure class="feature-picture">
+              <img
+                  src="image/daichi-checkout.jpg"
+                  alt="購入手続き・注文確認画面"
+      
+              >
+              
+              <figcaption>購入手続き・注文確認</figcaption>
+          </figure>
+
+          <div class="feature-copy">
+              <p class="small-number">FEATURE 03</p>
+
+              <h3>購入手続き・注文情報の登録</h3>
+
+              <p>
+                  カート内容を確認したうえで購入手続きへ進み、
+                  注文確定時に購入商品や合計金額、
+                  配送先などの注文情報をデータベースへ登録する処理を実装しました。
+              </p>
+
+              <p>
+                  フォーム送信時にはCSRF対策を行い、
+                  不正なリクエストによる注文処理を防ぐ構成にしています。
+                  注文が正常に確定した後は、
+                  注文内容とあわせて購入時のお客様情報も登録されます。
+              </p>
+
+              <ul>
+                  <li>購入内容・合計金額の確認</li>
+                  <li>CSRF対策による不正リクエスト防止</li>
+                  <li>注文確定後の注文情報登録</li>
+                  <li>購入時のお客様情報の保存</li>
+                  <li>注文商品・数量・価格のデータベース保存</li>
+              </ul>
+          </div>
+      </article>
+
+      <article class="detail-feature">
+        <figure class="feature-picture">
+          <img src="image/daichi-login.jpg" alt="会員ログイン画面" >
+         
+          <figcaption>会員ログイン・画面のアクセス制御</figcaption>
+        </figure>
+        <div class="feature-copy">
+        <p class="small-number">FEATURE 04</p>
+
+        <h3>会員登録・ログイン・権限管理</h3>
+
+        <p>
+            新規会員登録とログイン機能を実装し、
+            セッションを利用してログイン状態を管理しています。
+            登録時のパスワードはハッシュ化して保存し、
+            平文のままデータベースへ保存しない構成にしています。
+            また、利用者と管理者を区別し、
+            管理者用ページは管理者以外がアクセスできないよう制限しています。
+        </p>
+
+        <ul>
+            <li>新規会員登録・会員ログイン・ログアウト</li>
+            <li>パスワードのハッシュ化保存</li>
+            <li>セッションによるログイン状態の管理</li>
+            <li>利用者・管理者の権限分け</li>
+            <li>管理者専用ページのアクセス制限</li>
+        </ul>
+      </article>
+
+      <article class="detail-feature">
+        <figure class="feature-picture">
+          <img src="image/daichi-admin.jpg" alt="商品や顧客情報を扱う管理者画面" >
+
+          <figcaption>管理者の商品・顧客管理</figcaption>
+        </figure>
+        <div class="feature-copy">
+          <p class="small-number">FEATURE 05</p>
+          <h3>管理者向け商品・顧客データ管理</h3>
+
+          <p>
+              管理者専用画面から、商品情報や顧客情報を確認・管理できるようにしました。
+              商品については、一覧表示や検索・カテゴリ絞り込みに加えて、
+              新規追加、内容の変更・更新、販売停止にも対応しています。
+              また、顧客一覧から各顧客の詳細情報を確認できる構成にしています。
+          </p>
+
+          <ul>
+              <li>管理者認証による閲覧制限</li>
+              <li>商品の新規追加</li>
+              <li>商品情報の編集・更新</li>
+              <li>商品の販売停止・再販売</li>
+              <li>商品一覧・検索・カテゴリ絞り込み</li>
+              <li>顧客一覧・顧客詳細の確認</li>
+          </ul>
+        </div>
+      </article>
+    </section>
+
+  
+    <section class="detail" id="development">
+      <div class="section-head">
+        <p class="section-no">03 / DEVELOPMENT</p>
+        <h2>開発で工夫したこと</h2>
+      </div>
+      <div class="two-col">
+        <article class="info-card">
+            <h3>検索・絞り込み処理の実装</h3>
+            <p>
+                商品検索やカテゴリによる絞り込みでは、
+                PDOのプリペアドステートメントとパラメータバインドを利用し、
+                入力された条件に応じて必要な商品だけを取得する処理を実装しました。
+                あわせて、新着順・価格の安い順・高い順で並び替えられるようにし、
+                商品を探しやすい構成にしています。
+            </p>
+        </article>
+
+        <article class="info-card">
+            <h3>在庫・販売状態を考慮した商品管理</h3>
+            <p>
+                商品詳細では在庫数に応じて選択できる購入数量を制御し、
+                在庫切れの商品はカートに追加できないようにしました。
+                また、注文確定時にも在庫数と販売状態を再確認し、
+                カート追加後に売り切れや販売停止となった商品が
+                そのまま注文されないようにしています。
+            </p>
+        </article>
+
+        <article class="info-card">
+            <h3>jQuery・SCSSを用いたUI設計</h3>
+            <p>
+                jQueryと背景画像切り替え用プラグインを利用して
+                スライドショーを実装しました。
+                また、SCSSを用いてレイアウトや装飾を管理し、
+                ナビゲーションや商品表示を含めて、
+                PC・スマートフォンのどちらでも見やすい画面になるよう調整しています。
+            </p>
+        </article>
+
+        <article class="info-card">
+            <h3>セキュリティを意識した管理・フォーム処理</h3>
+            <p>
+                管理者専用ページではセッションによる権限確認を行い、
+                管理者以外のアクセスを制限しています。
+                また、商品登録・更新・購入処理などではCSRF対策を行い、
+                PDOのプリペアドステートメントによるSQLインジェクション対策、
+                htmlspecialchars()によるXSS対策、
+                パスワードのハッシュ化などを実装しました。
+            </p>
+        </article>
+              </div>
+            </section>
+
+            <section class="detail" id="ai">
+              <div class="section-head">
+                <p class="section-no">04 / GENERATIVE AI</p>
+                <h2>生成AIの活用</h2>
+                <p class="section-lead">制作過程での生成AIの利用について紹介します。</p>
+              </div>
+              <div class="two-col">
+                <article class="info-card">
+                  <span class="ai-label">開発過程のAI活用</span>
+                  <h3>実装方法の検討・エラー調査の補助</h3>
+                  <p>生成AIを、実装方法の調査やエラー原因を整理するための補助として活用しました。提案内容は処理を確認し、実際に動作を試しながら修正しました。</p>
+                </article>
+                <article class="info-card">
+                  <span class="ai-label">確認と検証</span>
+                  <h3>コードと実行結果を照らし合わせる</h3>
+                  <p>提案された処理がそのまま正しく動くとは限らないため、検索・カート・権限制御など、画面とデータベースの動きを確かめながら開発を進めました。</p>
+                </article>
+      </div>
+    </section>
+
+    <section class="detail" id="future">
+          <div class="section-head">
+            <p class="section-no">05 / NEXT STEPS</p>
+            <h2>今後の改善点</h2>
+          </div>
+          <div class="callout">
+        <p>
+            今後はJavaScriptを活用し、
+            商品の絞り込みやカート操作、数量変更などをより動的に行えるようにして、
+            ページ遷移や再読み込みを減らしたいと考えています。
+            操作結果がその場で分かるようにすることで、
+            より使いやすいECサイトに改善したいです。
+        </p>
+
+        <p style="margin-bottom:0">
+            また、入力エラーや在庫切れ、販売停止などの状態についても、
+            JavaScriptを用いて分かりやすく表示し、
+            利用者が迷わず操作できる画面づくりを進めたいと考えています。
+        </p>
+    </div>
+      <div class="actions">
+        <a class="btn" style="background:#fff;border-color:#c9d5ec;color:#243765" href="index.html#point3">← Works一覧へ戻る</a>
+      </div>
+    </section>
+  </main>
+  <footer><div class="container">© Portfolio — <a href="index.html#point3">Works一覧に戻る</a></div></footer>
+</body>
+</html>
